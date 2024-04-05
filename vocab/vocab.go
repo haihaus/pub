@@ -25,8 +25,8 @@ type Link struct {
 }
 
 // Activity is an action that occurs, has occurred, or will occur, on behalf of
-// an [Actor], or [Actor]s.  SEE: [https://www.w3.org/ns/activitystreams#Activity]
-// and [https://www.w3.org/ns/activitystreams#IntransitiveActivity].
+// an [Actor], or [Actor]s.  SEE: [https://www.w3.org/ns/activitystreams#Activity],
+// in some cases Activity can represent extended Activity types.
 type Activity struct {
 	Object
 
@@ -40,6 +40,9 @@ type Activity struct {
 	// are related to the English proposition "to."  It can be a [Link],
 	// [Object], or string that represents an URL to an ID.
 	Target *interface{} `json:"target"`
+
+	// Origin is the is the source of the Activity.
+	Origin *interface{} `json:"origin"`
 }
 
 // Collection is an (un)ordered set of [Object]s.  It is required to check the
